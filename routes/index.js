@@ -1,24 +1,13 @@
 const express = require("express");
+const { message, allMessages } = require("../controllers/messageController");
 const router = express.Router();
-
-router.get("/", (req, res) => {
-  console.log("getAllMessages");
-});
-
-router.delete("/", (req, res) => {
-  console.log("delete");
-});
-
-router.patch("/", (req, res) => {
-  console.log("edit");
-});
-
+// getting the messages from db and renders base site
+router.get("/", allMessages);
+// render in /new the form for user input
 router.get("/new", (req, res) => {
-  console.log("getForm");
+  res.render("form");
 });
-
-router.post("/new", (req, res) => {
-  console.log("submitNewMessage");
-});
+// saves in the db the new messages posted by the user and redirects user to base site
+router.post("/new", message);
 
 module.exports = router;

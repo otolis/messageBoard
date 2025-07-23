@@ -2,7 +2,7 @@ require("dotenv").config({
   path: require("path").resolve(__dirname, "../.env"),
 });
 const { Pool } = require("pg");
-
+// user for handling db client
 module.exports = new Pool({
   host: process.env.HOST_DB,
   user: process.env.USER_DB,

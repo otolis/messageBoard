@@ -1,5 +1,5 @@
 const pool = require("../db/pool");
-
+// seeding script to populate db
 const SQL = `
 CREATE TABLE IF NOT EXISTS messages (
   id SERIAL PRIMARY KEY,
